@@ -510,6 +510,22 @@ A &lt;http://example/other&gt; &lt;http://example/p&gt; 123 &lt;http://example/g
       </p>
     </section>
 
+    <section id="bnodes">
+      <h2>Blank Nodes</h2>
+      <p>
+        Both RDF-syntax-style (document scoped labels, new blank nodes created)
+        and store-scoped (existing blank nodes) are needed. 
+        RDF provides 
+        <a href="http://www.w3.org/TR/rdf11-concepts/#h3_section-skolemization"
+           >skolemization</a>
+        as a mechanism to reference specific blank nodes when needed.
+      </p>
+      <p>RDF Patch uses the special URI-like encoding
+        <tt>&lt;_:label&gt;</tt>
+        for directly identifying a blank node in a store.
+      </p>
+    </section>
+
     <!--
     <section>
       <h2>Relationship to SPARQL Update</h2>
@@ -625,17 +641,6 @@ A &lt;http://example/other&gt; &lt;http://example/p&gt; 123 &lt;http://example/g
            </p>
       </section>
 
-      <section id="alternative-bnode-syntax">
-        <h3>Alternative Blank Node Syntax</h3>
-        <p>Both RDF-style (document scoped labels, new blank nodes created)
-          and store-scoped (existing blank nodes) are needed. This may
-          require two syntaxes to distinguish.</p>
-        <p>Should store-scoped blank nodes have a special encoding like 
-          <tt>&lt;_:label&gt;</tt> and the <tt>_:label</tt> form behave
-          like RDF syntax?
-        </p>
-      </section>
-
       <section id="alignment-errors">
         <h3>Alignment Errors</h3>
         <p>Error handling : from 
@@ -649,7 +654,7 @@ A &lt;http://example/other&gt; &lt;http://example/p&gt; 123 &lt;http://example/g
 
       <section id="binary-format">
         <h3>Binary Format</h3>
-        <p>An alterntative wire format for efficient processing.</p>
+        <p>An alternative wire format for efficient processing.</p>
         <p class="todo">(Need to quantify the gains, if any).</p>
       </section>
 
